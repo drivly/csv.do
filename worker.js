@@ -24,7 +24,7 @@ export default {
     fields = fields ? fields.split(',') : rows[0].split(delimiter)
     
     let data = rows.map(row => row.split(delimiter).reduce((acc, val, i) => {
-        acc[fields[i]] = val
+        acc[fields[i]] = val === '' ? undefined : val
         return acc
     }, {}))
  
