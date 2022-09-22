@@ -18,7 +18,7 @@ export default {
   fetch: async (req, env) => {
     const { user, origin, requestId, method, body, time, pathname, pathSegments, pathOptions, query } = await env.CTX.fetch(req).then(res => res.json())
     let { delimiter = ',', fields } = pathOptions
-    const url = 'https://' + pathOptions ?  pathSegments.slice(1).join('/') : pathSegments.join('/')
+    const url = `https://${pathOptions ?  pathSegments.slice(1).join('/') : pathSegments.join('/')}`
     const file = await fetch(url).then(res => res.text())
     const rows = file.split('\n')
     fields = fields ?? rows[0].split(delimiter)
