@@ -23,7 +23,7 @@ export default {
     const rows = file.split('\n')
     fields = fields ? fields.split(',') : rows[0].split(delimiter)
     
-    let data = rows.map(row => row.split(delimiter).reduce((acc, val, i) => {
+    let data = rows.slice(pathOptions.fields ? 0 : 1).map(row => row.split(delimiter).reduce((acc, val, i) => {
         acc[fields[i]] = val === '' ? undefined : val
         return acc
     }, {}))
