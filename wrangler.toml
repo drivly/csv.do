@@ -1,6 +1,5 @@
 name = "csv-do"
-account_id = "b6641681fe423910342b9ffa1364c76d"
-route = { pattern = "*/*", zone_id = "dcd5d34c088be24bc9e73b4ade737291" }
+route = { pattern = "*/*", zone_name = "csv.do" }
 main = "worker.js"
 usage_model = "unbound"
 compatibility_date = "2022-08-23"
